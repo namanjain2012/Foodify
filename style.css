@@ -1,0 +1,559 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+  /* To test the layout of the page👇 */
+  /* border: 0.1rem solid red;  */
+}
+:root {
+  --lead: #212121;
+  --gold-finger: #f2bd12;
+  --eye-ball: #fffdf7;
+  --hint-yellow: #fcf1cc;
+  --pure-white: #fff;
+}
+body {
+  background-color: var(--eye-ball);
+}
+
+/* BASIC STYLING */
+
+a {
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: var(--lead);
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+.p-top {
+  padding-top: 10rem;
+}
+.mt-4 {
+  margin-top: 4rem;
+}
+
+.mt-half{
+  margin-top: 0.5rem;
+}
+
+.mt-one-half{
+  margin-top: 1.5rem;
+}
+
+.m-auto{
+  margin: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Making Custom classes */
+
+/* TO make elements as flexbox */
+.flex {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* To provide automatic gap between elements */
+.between {
+  justify-content: space-between;
+}
+
+/* To provide customized gap between elements */
+.gap-2 {
+  gap: 2rem;
+}
+.gap-3 {
+  gap: 3rem;
+}
+
+/* To provide space from left and right  */
+.wrapper {
+  max-width: 100rem;
+  margin: auto;
+  padding-inline: 1.5rem;
+}
+
+
+/* HEADER STYLING */
+
+.navbar {
+  min-height: 14vh; /*So that the navbar elements doest not remain sticked at top of screen*/
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--gold-finger);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  color: var(--pure-white);
+  background-color: var(--gold-finger);
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.6) 0 2px 1px;
+  transition: 0.3s ease-in-out; /*Default value of "property" in "transition" is "all"(Every property that is able to undergo a transition will do so.) */
+}
+.btn:hover {
+  background-color: var(--lead);
+}
+
+.cart-icon {
+  font-size: 1.3rem;
+  position: relative; /*We did this so that we can position cart-value w.r.t cart-icon*/
+}
+/* Descendant Selector */
+.cart-icon .cart-value {
+  position: absolute;
+  top: 50%; /*Relative to the cart-icon*/
+  right: -8px; /*Shift towards right as the value decreases*/
+  font-size: 0.85rem;
+  width: 20px;
+  aspect-ratio: 1; /*width:height ratio*/
+  border-radius: 100vw; /*Same as 50%*/
+  background-color: var(--gold-finger);
+  color: var(--lead);
+  text-align: center;
+  line-height: 20px; /*To make element content centered vertically*/
+}
+.desktop-action .hamburger {
+  font-size: 1.5rem;
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+/* SECTIONS STYLING */
+
+/*Hero Section*/
+
+.hero-section {
+  min-height: calc(100vh - 14vh); /*Because 14vh is occupied by navbar*/
+}
+
+.content,
+.image-container,
+.service-card {
+  flex: 1;
+  flex-basis: 300px; /*It protects the image from getting too shrink while decreasing the screen size*/
+}
+
+h1 {
+  font-size: 5.6vw;
+  color: var(--lead);
+}
+h1 span {
+  color: var(--gold-finger);
+}
+
+p {
+  font-size: 1.25rem;
+  color: gray;
+  line-height: 1.8rem;
+}
+.para {
+  margin-block: 2rem;
+  max-width: 550px;
+}
+
+.social-icon {
+  background-color: var(--hint-yellow);
+  width: 3rem;
+  aspect-ratio: 1; /*It means height is as same as width*/
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 3rem;
+  box-shadow: rgba(0, 0, 0, 0.6) 0 2px 1px;
+  transition: 0.3s ease-in-out;
+}
+.social-icon:hover {
+  background-color: var(--lead);
+  color: var(--pure-white);
+}
+
+/*Section 1(after hero section)*/
+
+h5 {
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  color: var(--gold-finger);
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 3.7rem;
+  color: var(--lead);
+}
+
+h3 {
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: var(--lead);
+}
+
+.service-card h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/*Section 2*/
+
+.order-card {
+  flex: 1;
+  flex-basis: 300px;
+  padding: 0 1rem 2rem 1rem;
+  background-color: var(--pure-white);
+  border: 0.1rem solid var(--gold-finger);
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 8px 8px 8px,
+    rgba(0, 0, 0, 0.05) 8px 8px 8px inset;
+}
+
+h4 {
+  font-size: 1.8rem;
+  color: var(--lead);
+}
+
+.order-card img {
+  width: 15rem;
+  filter: drop-shadow(rgba(0, 0, 0, 0.2) 0 10px 10px);
+}
+.order-card .price {
+  font-size: 1.7rem;
+  color: var(--gold-finger);
+  padding: 1.3rem 0 2rem 0;
+}
+
+/* CART TAB STYLING */
+
+.cart-tab{
+  background-color: var(--hint-yellow);
+  position: fixed;
+  /* inset: 0 -500 0 auto;  It's not working */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateX(100%); /*Making cart initially hidden*/
+  width: 25rem;
+  padding-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  box-shadow: rgba(0,0,0,0.2) -10px -10px 20px;
+  transition: 0.3s ease-in-out;
+}
+.cart-tab-active{
+  /* inset: 0 0 0 auto; */
+  transform: translateX(0%); /*Makes the cart visible*/
+}
+
+.cart-list{
+  flex: 1;
+  width: 100%;
+  margin-top: 1.5rem;
+  overflow: auto;
+}
+.cart-list::-webkit-scrollbar{
+  width: 0;
+}
+
+.total-container{
+  width: 100%;
+  background-color: var(--gold-finger);
+  text-align: center;
+  margin-block: 1rem;
+  padding-block: 1rem;
+}
+.total-container h4{
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+.btn-container .btn{
+  background-color: var(--lead);
+  transition: 0.3s ease-in-out;
+}
+.btn-container .btn:hover{
+  background-color: var(--gold-finger);
+  color: var(--lead);
+}
+
+.item{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.7rem 1rem;
+  transition: all 0.5s ease-in-out;
+}
+.cart-list .slide-out{
+  transform: translateX(50%);
+}
+.item .detail{
+  flex: 2;
+}
+
+/*SELF MIND USED HERE*/
+
+.item .stick-right{
+  position: sticky;
+  right: 0;
+}
+
+.cart-list .item:nth-child(even){
+  background-color: var(--eye-ball);
+}
+
+.item .item-image img{
+  width: 5rem;
+}
+.item h4{
+  font-size: 1.3rem;
+  color: var(--lead);
+}
+.item .item-total{
+  font-weight: normal;
+  margin-top: 0.3rem;
+}
+
+.quantity-btn{
+  background-color: var(--lead);
+  color: var(--pure-white);
+  width: 1.7rem;
+  aspect-ratio: 1;
+  border-radius: 100vw;
+  text-align: center;
+  line-height: 1.7rem;
+}
+
+
+
+.quantity-value{
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-inline: 0.6rem;
+}
+
+/* Section 3 */
+
+.review-container{
+  width: 650px;
+  max-width: 100%; /*Ensures that "review-container" never grow wider than "content" container*/
+  flex: 1;
+}
+
+.swiper{
+  width: 100%;
+  height: 100%;
+}
+
+.profile{
+  width: 4rem;
+  aspect-ratio: 1;
+  border-radius: 100vw;
+  overflow: hidden;
+}
+
+.profile img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fa-star{
+  color: var(--gold-finger);
+}
+
+.arrow{
+  width: 2.5rem;
+  aspect-ratio: 1;
+  border-radius: 100vw;
+  background-color: var(--gold-finger);
+  color: var(--lead);
+  text-align: center;
+  line-height: 2.5rem;
+}
+
+/* Section 4 */
+
+.app-container{
+  background-color: var(--hint-yellow);
+  padding: 3rem 6rem;
+  border-radius: 3rem;
+}
+.app-container .image-container img{
+  width: 25rem;
+}
+.app-container .content h2{
+  font-size: 4.5rem;
+}
+
+
+/* Section 5 */
+
+.input-container{
+  width: 43rem;
+  max-width: 100%;
+  background-color: var(--pure-white);
+  padding: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 5px 8px;
+  border-radius: 1rem;
+  margin: 4rem auto 0 auto;
+}
+
+input[type = "email"]{
+  flex: 1;
+  height: 7vh;
+  background-color: transparent;
+  border: none;
+  font-size: 1.1rem;
+  padding-left: 1rem;
+}
+input[type = "email"]:focus{
+  outline: none;
+}
+
+
+/* FOOTER STYLING */
+
+.footer-container{
+  margin-top: 10rem;
+  padding-block: 4rem;
+  background-color: var(--hint-yellow);
+}
+.footer-container .flex{
+  align-items: flex-start;
+}
+
+.footer-wrapper{
+  flex: 1;
+  flex-basis: 150px;
+}
+.footer-wrapper:nth-child(1){
+  flex: 2;
+  flex-basis: 300px;
+}
+.footer-wrapper .social-icon{
+  background-color: var(--pure-white);
+}
+.footer-wrapper .social-icon:hover{
+  background-color: var(--lead);
+  color: var(--pure-white);
+}
+
+.footer-link{
+  color: gray;
+  font-size: 1.1rem;
+  transition: 0.3s ease-in-out;
+}
+.footer-link:hover{
+  color: var(--lead);
+}
+
+
+/* MEDIA QUERIES */
+
+
+/* When the screen size is small then we have to hide the navlist */
+@media screen and (max-width: 810px) {
+  /* HEADER STYLING */
+
+  .navlist,
+  .desktop-action .btn {
+    display: none;
+  }
+
+  .desktop-action .hamburger {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /*In order to provide vertical gap*/
+    position: absolute; /*So that we can take it to the center*/
+    top: 20%; /*Shift the element to the bottom*/
+    /*left: 50%;  /*Moves the left edge of box on the middle line of the parent's container*/
+    /* But we will use the above line when hamburger icon is clicked to see the mobile menu */
+    left: -100%; /*Hide it to the left initially*/
+    transform: translateX(
+      -50%
+    ); /*Moves 50% of it's own width to the left(due to -ve sign)*/
+    width: 20rem; /*To show its background beautiful*/
+    padding: 2rem;
+    background-color: var(--pure-white);
+    border: 0.1rem solid var(--gold-finger);
+    border-radius: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 8px 8px 8px,
+      rgba(0, 0, 0, 0.05) 8px 8px 8px inset;
+    transition: 0.5s ease-in-out; /*To show the sliding menu from left to center when user clicked on hamburger icon in mobile screen*/
+  }
+
+  /*We will access this class using JS to show menu in mobile screens*/
+  .mobile-menu-active {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* SECTIONS STYLING */
+
+  /*HERO Section*/
+
+  h1 {
+    font-size: 3.6rem;
+  }
+
+  .content {
+    padding-top: 3rem;
+  }
+
+  .gap-2 {
+    gap: 1.4rem;
+  }
+  .gap-4 {
+    gap: 4rem;
+  }
+
+  /*SECTION 1*/
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  /* Section 4 */
+
+  .app-container{
+    padding: 2.2rem;
+  }
+
+  .app-container .content h2{
+    font-size: 3.5rem;
+  }
+
+}
